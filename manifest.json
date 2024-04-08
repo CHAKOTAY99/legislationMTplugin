@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "LegislationMT PDF Helper",
+  "description": "Open Legislation.mt PDFs in new window",
+  "version": "1.0",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "images/gavel.png"
+  },
+  "icons": {
+    "16": "images/gavel.png",
+    "32": "images/gavel.png",
+    "48": "images/gavel.png",
+    "128": "images/gavel.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://legislation.mt/eli/*"
+      ]
+    }
+  ]
+}
