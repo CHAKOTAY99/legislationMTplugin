@@ -1,4 +1,4 @@
-const frameElement = document.querySelector("iframe");
+let frameElement = document.querySelector("iframe");
 
 // `document.querySelector` may return null if the selector doesn't match anything.
 if (frameElement) {
