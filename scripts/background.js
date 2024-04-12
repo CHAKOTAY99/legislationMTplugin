@@ -45,6 +45,7 @@ chrome.tabs.onUpdated.addListener((tabId , info) => {
     }
 });
 
+// When click run script
 chrome.action.onClicked.addListener(async (tab) => {
     
     // Check if the tab matches the URL you're interested in again
@@ -55,4 +56,11 @@ chrome.action.onClicked.addListener(async (tab) => {
             files: ["scripts/content.js"]
         });
     }
+});
+
+// Await response from script
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+   if (message.type === 'pdfUrl') {
+       chrome.tabs.create({url: message.data});
+   }
 });
